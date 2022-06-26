@@ -10,9 +10,6 @@ let index = 0;
 images.forEach(element => {
     element.addEventListener("click",open,false);
 });
-/*Assing the eventListener to the next and previus button */
-btnNext.addEventListener("click",next);
-btnPrev.addEventListener("click",previous);
 /*Assing the eventListener to the close button, in this case we use an anonymous function 
 because the operation is very simple */
 btnClose.addEventListener("click",()=>{
@@ -24,6 +21,8 @@ function open(e){
     selectedImg.src = e.target.src;
     index = Array.from(images).indexOf(e.target);
 }
+/*Assing the eventListener to the next button */
+btnNext.addEventListener("click",next);
 /**This function allows us go to the next image */
 function next(){
     if(index === images.length - 1){
@@ -32,6 +31,8 @@ function next(){
     selectedImg.src = images[index + 1].src;
     index++;
 }
+/*Assing the eventListener to the previus button */
+btnPrev.addEventListener("click",previous);
 /**This function allows us go to the previous image */
 function previous(){
     if(index === 0){
